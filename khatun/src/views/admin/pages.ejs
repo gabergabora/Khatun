@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body  onload="f1()">
+<script language ="javascript" >
+        var tmp;
+        function f1() {
+             tmp = setInterval(() => f2(), 20000); // replace this with 5 min timer
+        } 
+        function f2() {
+            document.getElementById("Button1").click();
+        }
+
+        function f3() {
+          console.log("Hello World");
+        }
+</script>
+
+<button id="Button1" onclick="f3()">click me</button>
+<div id="demo"></div>
+</body>
+
+</html>

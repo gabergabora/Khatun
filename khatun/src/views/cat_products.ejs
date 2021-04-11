@@ -1,0 +1,24 @@
+<% include _layouts/header %>
+
+<div class="main-cards row products pro">
+    
+    <% !products.forEach(function(p){ %>
+            <div class="col-xs-12 col-md-4">
+            <div class="object-card">
+            <br>
+                <a class="pa" href="/content/<%= p.category %>/<%= p.slug %>">
+                    <img class="pimage" src="/product_images/<%= p.id %>/<%= p.image %>" alt="">
+                </a>
+                <br><br><br>
+                <center><p><%= p.title %></p></center>
+                <br>
+                <span>صانع محتواى</span>
+                <br><br>
+                <button class="info-btn" style="margin-bottom: 5px;" onclick="window.location.href='/content/<%= p.category %>/<%= p.slug %>'">المزيد من المعلومات</button>
+            </div><br>
+            </div>
+            
+        <% }); %>
+</div>
+
+<% include _layouts/footer %>
