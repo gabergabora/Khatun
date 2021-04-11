@@ -1,0 +1,34 @@
+<% include _layouts/content-maker-header %>
+
+<div class="row">
+        <script>
+          function goBack() {
+            window.history.back();
+          }
+        </script>
+    <h1 class="page-header content-maker-name"><%= p.title %></h1>
+    
+    <div class="col-xs-12 col-md-5">
+        <img class="spi" src="/product_images/<%= p.id %>/<%= p.image %>" alt="">
+        <br>
+    </div>
+    <div class="col-xs-12 col-md-7" style="text-align: center;">
+        <p class="content-maker-des"><%= p.desc %></p>
+        <button class="content-maker-page-btn" onclick="goBack()">رجوع</button>
+    </div>
+    <div class="col-xs-12">
+        <ul class="gallery">
+            <% galleryImages.forEach(function(image){ %>
+            <% if (image != "thumbs") { %>
+            <li>
+                <a data-fancybox="gallery" href="/product_images/<%= p.id %>/gallery/<%= image %>">
+                    <img src="/product_images/<%= p.id %>/gallery/thumbs/<%= image %>" alt="">
+                </a>
+            </li>
+            <% } %>
+            <% }); %>
+        </ul>
+    </div>
+</div>
+
+<% include _layouts/footer %>
